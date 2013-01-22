@@ -15,7 +15,6 @@ SETTINGS = {
   defaultPadText: '',
   editOnly: true,
   ip: '0.0.0.0',
-  logconfig: {},
   requireSession: true,
   title: '',
 }.merge(settings)
