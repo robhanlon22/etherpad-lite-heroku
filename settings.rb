@@ -5,7 +5,6 @@ mysql_uri = URI.parse(ENV['ETHERPAD_DATABASE_URL'])
 SETTINGS = {
   favicon: 'favicon.ico',
   ip: '0.0.0.0',
-  port: ENV['PORT'],
   dbType: 'mysql',
   dbSettings: {
     user: mysql_uri.user,
