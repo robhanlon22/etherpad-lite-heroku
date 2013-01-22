@@ -2,6 +2,8 @@ require 'uri'
 
 mysql_uri = URI.parse(ENV['ETHERPAD_DATABASE_URL'])
 
+settings = JSON.parse(ENV.fetch('ETHERPAD_SETTINGS', {}.to_json))
+
 SETTINGS = {
   dbType: 'mysql',
   dbSettings: {
@@ -16,4 +18,4 @@ SETTINGS = {
   logconfig: {},
   requireSession: true,
   title: '',
-}
+}.merge(settings)
