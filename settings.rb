@@ -1,6 +1,6 @@
 require 'uri'
 
-mysql_uri = URI.parse(ENV['ETHERPAD_DATABASE_URL'])
+mysql_uri = URI.parse(ENV['DATABASE_URL'])
 
 settings = JSON.parse(ENV.fetch('ETHERPAD_SETTINGS', {}.to_json))
 
