@@ -15,7 +15,7 @@ unless File.exists?('node_modules')
 end
 
 ENV.fetch('ETHERPAD_PLUGINS', '').split(',').each do |etherpad_plugin|
-  unless system("npm install ep_#{etherpad_plugin}")
+  unless system("npm install --production ep_#{etherpad_plugin}")
     abort("Failed to install plugin #{etherpad_plugin}.")
   end
 end
