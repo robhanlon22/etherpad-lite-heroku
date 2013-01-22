@@ -20,11 +20,5 @@ SETTINGS = {
   requireAuthentication: false,
   requireAuthorization: false,
   loglevel: 'INFO',
-  socketTransportProtocols: ['xhr-polling', 'jsonp-polling', 'htmlfile'],
-  users: {
-    admin: {
-      password: ENV['ETHERPAD_ADMIN_PASSWORD'],
-      is_admin: true
-    }
-  }
+  socketTransportProtocols: ['xhr-polling', 'jsonp-polling', 'htmlfile']
 }
