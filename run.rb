@@ -61,5 +61,11 @@ FileUtils.rm_rf('etherpad-lite/src/node_modules/ep_etherpad-lite')
 # Remove this odd straggling symlink that kept showing up. Lazy.
 FileUtils.rm_rf('etherpad-lite/src/src')
 
+if ENV.key?('ETHERPAD_INDEX_CONTENT')
+  File.open('etherpad-lite/src/templates/index.html', 'w') do |f|
+    f.write(ENV['ETHERPAD_INDEX_CONTENT'])
+  end
+end
+
 # Run the server.
 exec('node node_modules/ep_etherpad-lite/node/server.js')
