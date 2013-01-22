@@ -5,7 +5,7 @@ require 'json'
 
 require_relative './settings'
 
-File.open('APIKEY.txt', 'w') { |f| f.write(ENV['ETHERPAD_KEY']) }
+File.open('APIKEY.txt', 'w') { |f| f.write(ENV['ETHERPAD_API_KEY']) }
 File.open('settings.json', 'w') { |f| f.write(SETTINGS.to_json) }
 
 FileUtils.mkdir_p('etherpad-lite/src/node_modules')
