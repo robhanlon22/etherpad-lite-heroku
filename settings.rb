@@ -3,8 +3,6 @@ require 'uri'
 mysql_uri = URI.parse(ENV['ETHERPAD_DATABASE_URL'])
 
 SETTINGS = {
-  favicon: 'favicon.ico',
-  ip: '0.0.0.0',
   dbType: 'mysql',
   dbSettings: {
     user: mysql_uri.user,
@@ -12,12 +10,17 @@ SETTINGS = {
     password: mysql_uri.password,
     database: mysql_uri.path.sub(%r{^/}, '')
   },
-  requireSession: true,
+  defaultPadText: '',
   editOnly: true,
-  minify: true,
+  favicon: 'favicon.ico',
+  ip: '0.0.0.0',
+  logconfig: {},
+  loglevel: 'INFO',
   maxAge: 21600,
+  minify: true,
   requireAuthentication: false,
   requireAuthorization: false,
-  loglevel: 'INFO',
-  socketTransportProtocols: ['xhr-polling', 'jsonp-polling', 'htmlfile']
+  requireSession: true,
+  socketTransportProtocols: ['xhr-polling', 'jsonp-polling', 'htmlfile'],
+  title: '',
 }
